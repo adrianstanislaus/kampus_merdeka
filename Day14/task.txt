@@ -1,0 +1,191 @@
+
+    Create
+        Insert 5 operators pada table operators.
+
+db.operators.insertMany( [
+      { _id: 1, name: "A" },
+      { _id: 2, name: "B" },
+      { _id: 3, name: "C" },
+      { _id: 4, name: "D" },
+      { _id: 5, name: "E" }
+   ] );
+
+        Insert 3 product type.
+
+db.product_types.insertMany( [
+      { _id: 1, name: "Pulsa" },
+      { _id: 2, name: "Paket Data" },
+      { _id: 3, name: "Lain-lain" }
+   ] );
+
+        Insert 2 product dengan product type id = 1, dan operators id = 3.
+
+db.products.insertMany( [
+      { _id: 1, product_type_id: 1, operator_id: 3, name: "A" },
+      { _id: 2, product_type_id: 1, operator_id: 3, name: "B" }
+   ] );
+
+        Insert 3 product dengan product type id = 2, dan operators id = 1.
+
+db.products.insertMany( [
+      { _id: 3, product_type_id: 2, operator_id: 1, name: "X" },
+      { _id: 4, product_type_id: 2, operator_id: 1, name: "Y" },
+      { _id: 5, product_type_id: 2, operator_id: 1, name: "Z" }
+   ] );
+
+        Insert 3 product dengan product type id = 3, dan operators id = 4.
+
+db.products.insertMany( [
+      { _id: 6, product_type_id: 3, operator_id: 4, name: "T" },
+      { _id: 7, product_type_id: 3, operator_id: 4, name: "G" },
+      { _id: 8, product_type_id: 3, operator_id: 4, name: "V" }
+   ] );
+
+
+        Insert product description pada setiap product.
+
+db.product_descriptions.insertMany( [
+      { _id: 1, description: "waw" },
+      { _id: 2, description: "keren" },
+      { _id: 3, description: "uwaw" },
+      { _id: 4, description: "mantap" },
+      { _id: 5, description: "wadigidaw" },
+      { _id: 6, description: "lumayan" },
+      { _id: 7, description: "oke" },
+      { _id: 8, description: "b aja" }
+   ] );
+
+        Insert 3 payment methods.
+
+db.payment_methods.insertMany( [
+      { _id: 0, name: "GOPAY", status: 1,  },
+      { _id: 1, name: "DANA", status: 2,  },
+      { _id: 2, name: "OVO", status: 1,  }
+   ] );
+
+
+        Insert 5 user pada tabel user.
+
+db.users.insertMany( [
+      { _id: 1, name: "Edo", gender: "m" },
+      { _id: 2, name: "James", gender: "m" },
+      { _id: 3, name: "Winter", gender: "f" },
+      { _id: 4, name: "Abuy", gender: "f" },
+      { _id: 5, name: "Lisa", gender: "f" }
+   ] );
+
+
+        Insert 3 transaksi di masing-masing user. (soal berlanjut ke soal 1.j)
+
+db.transactions.insertMany( [
+      { _id: 1, user_id: 1, payment_method_id: 1, total_qty: 3, total_price: 1000 },
+      { _id: 2, user_id: 1, payment_method_id: 1, total_qty: 3, total_price: 1000 },
+      { _id: 3, user_id: 1, payment_method_id: 1, total_qty: 3, total_price: 1000 },
+      { _id: 4, user_id: 2, payment_method_id: 1, total_qty: 3, total_price: 1000 },
+      { _id: 5, user_id: 2, payment_method_id: 2, total_qty: 3, total_price: 1000 },
+      { _id: 6, user_id: 2, payment_method_id: 3, total_qty: 3, total_price: 1000 },
+      { _id: 7, user_id: 3, payment_method_id: 2, total_qty: 3, total_price: 1000 },
+      { _id: 8, user_id: 3, payment_method_id: 1, total_qty: 3, total_price: 1000 },
+      { _id: 9, user_id: 3, payment_method_id: 1, total_qty: 3, total_price: 1000 },
+      { _id: 10, user_id: 4, payment_method_id: 3, total_qty: 3, total_price: 1000 },
+      { _id: 11, user_id: 4, payment_method_id: 2, total_qty: 3, total_price: 1000 },
+      { _id: 12, user_id: 4, payment_method_id: 1, total_qty: 3, total_price: 1000 },
+      { _id: 13, user_id: 5, payment_method_id: 2, total_qty: 3, total_price: 1000 },
+      { _id: 14, user_id: 5, payment_method_id: 2, total_qty: 3, total_price: 1000 },
+      { _id: 15, user_id: 5, payment_method_id: 2, total_qty: 3, total_price: 1000 }
+
+   ] );
+
+
+        Insert 3 product di masing-masing transaksi.
+
+db.transaction_details.insertMany( [
+      { transaction_id: 1, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 1, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 1, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 2, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 2, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 2, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 3, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 3, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 3, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 4, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 4, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 4, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 5, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 5, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 5, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 6, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 6, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 6, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 7, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 7, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 7, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 8, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 8, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 8, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 9, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 9, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 9, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 10, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 10, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 10, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 11, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 11, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 11, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 12, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 12, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 12, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 13, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 13, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 13, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 14, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 14, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 14, product_id: 3, qty: 1, price: 300 },
+      { transaction_id: 15, product_id: 1, qty: 1, price: 300 },
+      { transaction_id: 15, product_id: 2, qty: 1, price: 300 },
+      { transaction_id: 15, product_id: 3, qty: 1, price: 300 },
+   ] );
+
+
+    Read
+        Tampilkan nama user / pelanggan dengan gender Laki-laki / M.
+
+db.users.find({gender: "m"},{name: 1, _id: 0})
+
+
+        Tampilkan product dengan id = 3.
+
+db.products.find({_id: 3})
+
+
+        Hitung jumlah user / pelanggan dengan status gender Perempuan.
+
+db.users.find({gender: "f"}).count()
+
+
+        Tampilkan data pelanggan dengan urutan sesuai nama abjad.
+
+db.users.find().sort({name: 1})
+
+        Tampilkan 5 data product.
+
+db.products.find().limit(5)
+
+    Update
+        Ubah data product id 1 dengan nama ‘product dummy’.
+
+db.products.update({_id: 1},{$set :{name: "product dummy"}})
+
+        Ubah qty = 3 pada transaction detail dengan product id 1.
+
+db.transaction_details.updateOne({product_id: 1},{$set: {qty: 3}})
+
+    Delete
+        Delete data pada tabel product dengan id 1.
+
+db.products.deleteOne({_id: 1})
+
+        Delete pada pada tabel product dengan product type id 1.
+
+db.products.deleteMany({product_type_id: 1})

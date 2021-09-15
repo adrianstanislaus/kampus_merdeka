@@ -1,0 +1,196 @@
+//Problem 1
+package main
+
+import "fmt"
+
+func main() {
+	T := 20.0
+	r := 4.0
+	const pi = 3.14
+	var lp_tabung = (2 * pi * r * T) + 2*(pi*r*r)
+	fmt.Println(lp_tabung)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+	var T,r float64
+	const pi = 3.14
+	fmt.Scanf("%f\r",&T)
+	fmt.Scanf("%f\r", &r)
+	var lp_tabung = (2 * pi * r * T) + 2*(pi*r*r)
+	fmt.Println(lp_tabung)
+}
+
+//Problem 2
+package main
+
+import "fmt"
+
+func main() {
+	var studentName string
+	var studentScore int
+	fmt.Println("Masukan nama =")
+	fmt.Scanf("%s\r", &studentName)
+	fmt.Println("Masukan nilai =")
+	fmt.Scanf("%d\r", &studentScore)
+	fmt.Println(studentName)
+	if studentScore <= 100 && studentScore >= 80 {
+		fmt.Println("Nilai A")
+	} else if studentScore <= 79 && studentScore >= 65 {
+		fmt.Println("Nilai B")
+	} else if studentScore <= 64 && studentScore >= 50 {
+		fmt.Println("Nilai C")
+	} else if studentScore <= 49 && studentScore >= 35 {
+		fmt.Println("Nilai D")
+	} else if studentScore <= 34 && studentScore >= 0 {
+		fmt.Println("Nilai E")
+	} else {
+		fmt.Println("Nilai Invalid")
+	}
+}
+
+
+//Problem 3
+package main
+
+import "fmt"
+
+func main() {
+	var bilangan int
+	fmt.Scanf("%d\r", &bilangan)
+	for i := 1; i <= bilangan; i++ {
+		if bilangan%i == 0 {
+			fmt.Println(i)
+		}
+	}
+
+}
+
+//Problem 4
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func primeNumber(number int) string {
+	if number <= 1 {
+		return "Bukan bilangan prima"
+	} else if (number > 2) && (number%2 == 0) {
+		return "Bukan bilangan prima"
+	} else {
+		pembagi_terbesar := math.Floor(math.Sqrt(float64(number)))
+		for i := 3; i <= int(pembagi_terbesar); i += 2 {
+			if number%i == 0 {
+				return "Bukan bilangan prima"
+			}
+		}
+		return "Bilangan prima"
+	}
+}
+func main() {
+	fmt.Println(primeNumber(11))
+	fmt.Println(primeNumber(13))
+	fmt.Println(primeNumber(17))
+	fmt.Println(primeNumber(20))
+	fmt.Println(primeNumber(20))
+
+}
+
+//Problem 5
+package main
+
+import "fmt"
+
+func palindrome(input string) string {
+	half := ((len(input) / 2) - 1)
+	for i := 0; i <= half; i++ {
+		if input[i] != input[len(input)-1-i] {
+			return "bukan palindrome"
+		}
+	}
+	return "Palindrome"
+
+}
+
+func main() {
+	fmt.Println(palindrome("civic"))
+	fmt.Println(palindrome("katak"))
+	fmt.Println(palindrome("kasur rusak"))
+	fmt.Println(palindrome("mistar"))
+	fmt.Println(palindrome("lion"))
+
+}
+
+//Problem 6
+package main
+
+import "fmt"
+
+func pangkat(base, pangkat int) int {
+	var eksponen int = 1
+	for i := 1; i <= pangkat; i++ {
+		eksponen *= base
+	}
+	return eksponen
+}
+
+func main() {
+	fmt.Println(pangkat(2, 3))
+	fmt.Println(pangkat(5, 3))
+	fmt.Println(pangkat(10, 2))
+	fmt.Println(pangkat(2, 5))
+	fmt.Println(pangkat(7, 3))
+}
+
+//Problem 7
+package main
+
+import "fmt"
+
+func playWithAsterik(n int) {
+	for i := 1; i <= n; i++ {
+		fmt.Println("")
+		for x := n - 1; x >= i; x-- {
+			fmt.Print(" ")
+		}
+		for j := 1; j <= i; j++ {
+			fmt.Print("*")
+			fmt.Print(" ")
+		}
+		fmt.Println("")
+	}
+	fmt.Println("")
+}
+
+func main() {
+	playWithAsterik(5)
+}
+
+//Problem 8
+package main
+
+import "fmt"
+
+func cetakTablePerkalian(number int) {
+	for i := 1; i <= number; i++ {
+		x := 1
+		total := 0
+		for j := i; x <= number; x++ {
+			total += j
+			fmt.Print(total)
+			fmt.Print(" ")
+		}
+		fmt.Println("")
+		fmt.Println("")
+	}
+
+}
+
+func main() {
+	cetakTablePerkalian(9)
+}
